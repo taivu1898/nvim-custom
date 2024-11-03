@@ -20,3 +20,9 @@ map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
+
+map("n", "<Tab>", ":tabnext<CR>", { desc = "Go to next tab" })
+map("n", "<S-Tab>", ":tabprevious<CR>", { desc = "Go to previous tab" })
+map("n", "<leader>x", ":tabclose<CR>", { desc = "Close tab" })
+
+-- map({"n", "v"}, "<leader>/", "", {desc= "Comment"})
