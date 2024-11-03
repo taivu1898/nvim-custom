@@ -26,3 +26,6 @@ map("n", "<S-Tab>", ":tabprevious<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>x", ":tabclose<CR>", { desc = "Close tab" })
 
 -- map({"n", "v"}, "<leader>/", "", {desc= "Comment"})
+map("n", "<F5>", ":!bash runCode.sh<CR>", { noremap = true, silent = true })
+
+map("n", "<leader>x", ":close<CR>", { noremap = true, silent = true })

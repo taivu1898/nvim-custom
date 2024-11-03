@@ -1,11 +1,20 @@
 return {
     -- theme
     {
-        "ellisonleao/gruvbox.nvim",
+        'shaunsingh/nord.nvim',
+        lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd "colorscheme gruvbox"
-        end,
+            vim.cmd([[colorscheme nord]])
+        end
+    },
+
+    {
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("plugins.configs.ui.headlines")
+        end
     },
 
     {

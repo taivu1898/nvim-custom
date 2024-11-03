@@ -44,6 +44,7 @@ opt.splitright = true -- Mở cửa sổ dọc (vertical split) ở bên phải
 opt.splitbelow = true -- Mở cửa sổ ngang (horizontal split) ở bên dưới
 opt.cursorlineopt = "both"
 
+opt.fillchars:append("eob: ")
 ------------------------------------------------------------------
 
 -- Tắt plugin 'netrw' vì đã sử dụng 'nvim-tree' thay thế

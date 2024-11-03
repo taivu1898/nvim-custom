@@ -10,9 +10,8 @@ function M.setup()
             end,
         },
         mapping = {
-            ["<C-n>"] = cmp.mapping.select_next_item(),        -- Chọn item tiếp theo
-            ["<C-p>"] = cmp.mapping.select_prev_item(),        -- Chọn item trước
-            ["<C-e>"] = cmp.mapping.close(),                   -- Đóng menu hoàn thành
+            ["<Tab>"] = cmp.mapping.select_next_item(),        -- Chọn item tiếp theo
+            ["<S-Tab>"] = cmp.mapping.select_prev_item(),      -- Chọn item trước
             ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Xác nhận hoàn thành
         },
         sources = {

@@ -62,6 +62,12 @@ M.setup = function()
             setup_keymaps(bufnr) -- Thiết lập keymaps cho buffer
         end,
     })
+    lspconfig.clangd.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+            setup_keymaps(bufnr) -- Thiết lập keymaps cho buffer
+        end,
+    })
 end
 
 return M
