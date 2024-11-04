@@ -1,8 +1,7 @@
 local M = {}
 
--- Hàm thiết lập keymaps cho LSP
 local function setup_keymaps(bufnr)
-    local keymap = vim.keymap -- Lấy keymap
+    local keymap = vim.keymap
     local opts = { buffer = bufnr, silent = true }
 
     local mappings = {
@@ -27,7 +26,6 @@ local function setup_keymaps(bufnr)
     end
 end
 
--- Hàm thiết lập diagnostic icons
 local function setup_diagnostics()
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
@@ -36,14 +34,12 @@ local function setup_diagnostics()
     end
 end
 
--- Hàm chính để thiết lập lua_ls
 M.setup = function()
-    setup_diagnostics() -- Thiết lập các icon diagnostic
+    setup_diagnostics()
 
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    -- Thiết lập capabilities cho lua_ls
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     lspconfig.lua_ls.setup({
@@ -51,21 +47,21 @@ M.setup = function()
         settings = {
             Lua = {
                 diagnostics = {
-                    globals = { "vim" }, -- Nhận diện 'vim' như một global
+                    globals = { "vim" },
                 },
                 completion = {
-                    callSnippet = "Replace", -- Cách hoàn thành snippet
+                    callSnippet = "Replace",
                 },
             },
         },
         on_attach = function(client, bufnr)
-            setup_keymaps(bufnr) -- Thiết lập keymaps cho buffer
+            setup_keymaps(bufnr)
         end,
     })
     lspconfig.clangd.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
-            setup_keymaps(bufnr) -- Thiết lập keymaps cho buffer
+            setup_keymaps(bufnr)
         end,
     })
 end

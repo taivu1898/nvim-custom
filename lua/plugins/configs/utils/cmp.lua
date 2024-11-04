@@ -6,19 +6,19 @@ function M.setup()
     cmp.setup({
         snippet = {
             expand = function(args)
-                require("luasnip").lsp_expand(args.body) -- sử dụng LuaSnip để mở rộng snippet
+                require("luasnip").lsp_expand(args.body)
             end,
         },
         mapping = {
-            ["<Tab>"] = cmp.mapping.select_next_item(),        -- Chọn item tiếp theo
-            ["<S-Tab>"] = cmp.mapping.select_prev_item(),      -- Chọn item trước
-            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Xác nhận hoàn thành
+            ["<Tab>"] = cmp.mapping.select_next_item(),
+            ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+            ["<CR>"] = cmp.mapping.confirm({ select = true }),
         },
         sources = {
-            { name = "buffer" },   -- Tìm kiếm trong buffer hiện tại
-            { name = "path" },     -- Tìm kiếm trong đường dẫn
-            { name = "luasnip" },  -- Tìm kiếm trong các snippet
-            { name = "nvim_lsp" }, -- Tìm kiếm từ LSP
+            { name = "buffer" },
+            { name = "path" },
+            { name = "luasnip" },
+            { name = "nvim_lsp" },
         },
         formatting = {
             format = require("lspkind").cmp_format({ with_text = true, menu = { buffer = "[Buffer]", path = "[Path]", luasnip = "[Snippet]", nvim_lsp = "[LSP]" } }),
@@ -27,7 +27,7 @@ function M.setup()
 
     cmp.setup.filetype("gitcommit", {
         sources = {
-            { name = "buffer" }, -- Chỉ sử dụng buffer cho commit
+            { name = "buffer" },
         },
     })
 

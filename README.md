@@ -34,3 +34,21 @@ This is my structure folder
         │       └── which-key.lua
         └── init.lua
 ```
+
+## Run C++ file for Competitive Programming
+
+- add file to workspace
+
+```bash
+#!/bin/bash
+
+clang++ -std=c++23 main.cpp -o main
+
+if [ -f "./main" ]; then
+    ./main < input.txt > output.txt
+    echo "Program executed successfully. Output written to output.txt."
+else
+    echo "Compilation failed, executable not found."
+fi
+
+```

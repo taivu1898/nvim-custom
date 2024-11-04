@@ -14,8 +14,6 @@ end)
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Nvim Tree Toggle" })
 
-map({ "n", "v" }, "C-c", "<cmd>%y+<CR>", { desc = "Copy to clipboard" })
-
 map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
@@ -25,7 +23,6 @@ map("n", "<Tab>", ":tabnext<CR>", { desc = "Go to next tab" })
 map("n", "<S-Tab>", ":tabprevious<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>x", ":tabclose<CR>", { desc = "Close tab" })
 
--- map({"n", "v"}, "<leader>/", "", {desc= "Comment"})
 map("n", "<F5>", ":!bash runCode.sh<CR>", { noremap = true, silent = true })
 
 map("n", "<leader>x", ":close<CR>", { noremap = true, silent = true })
